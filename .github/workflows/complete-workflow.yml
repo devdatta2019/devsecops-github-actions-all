@@ -30,14 +30,7 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
           
-Image Build: ci
 
-on:
-  push:
-    branches:
-      - 'main'
-
-jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
