@@ -28,6 +28,8 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+          reposatory: devdatta1987/hello-kaniko
+
       # And make it available for builds
       - name: Build and push
         uses: docker/build-push-action@v2
