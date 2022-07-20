@@ -31,12 +31,6 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
           
 name: ci
- Check failure on line 33 in .github/workflows/complete-workflow.yml
-
-GitHub Actions
-/ .github/workflows/complete-workflow.yml
-Invalid workflow file
-You have an error in your yaml syntax on line 33
 
 on:
   push:
