@@ -28,12 +28,8 @@ jobs:
         uses: snyk/actions/maven@master
         continue-on-error: true
         env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
- 
-    branches:
-      - 'master'
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }
 
-jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
