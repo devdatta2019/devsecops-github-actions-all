@@ -1,7 +1,6 @@
 name: Build code, run unit test, run SAST, SCA, DAST security scans
 on: push
-jobs:
-  build:
+   build:
     runs-on: ubuntu-latest
     name: Run unit tests and SAST scan on the source code 
     steps:
