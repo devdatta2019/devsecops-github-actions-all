@@ -2,12 +2,6 @@
 FROM openjdk:16-alpine3.13
 
 WORKDIR /app
-
-COPY .mvn/ .mvn
-COPY mvnw pom.xml ./
-RUN ./mvnw dependency:go-offline
-
-COPY src ./src
-
-CMD ["./mvnw", "spring-boot:run"]
+COPY src/test/java/TestCalculator.java ./src
+CMD ["java", "TestCalculator.java"]
 
