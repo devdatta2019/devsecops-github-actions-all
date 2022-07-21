@@ -1,6 +1,6 @@
 
 FROM openjdk:16-alpine3.13
 WORKDIR /app
-COPY src/test/java/CalculatorTest.java ./src
+COPY . /app
 CMD ["java", "CalculatorTest.java"]
 
