@@ -1,3 +1,5 @@
-FROM ubuntu:20.04
-RUN apt-get -y update
-RUN apt-get -y install nginx
+FROM openjdk:17
+MKDIR app
+WORKDIR app
+COPY ./src /app
+ENTRYPOINT ["java","HelloWorld"]
