@@ -28,4 +28,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: appsecurity:latest
+          tags: devdatta1987/appsecurity:latest
