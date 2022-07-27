@@ -62,8 +62,11 @@ env:
   GKE_ZONE: us-central1-c   # Add your cluster zone here.
   DEPLOYMENT_NAME: gke-test # Add your deployment name here.
   IMAGE: static-site
-
-  steps:
+     
+     
+     jobs:
+     setup-build-publish-deploy
+     name: Setup, Build, Publish, and Deploy
      runs-on: ubuntu-latest
      environment: production
      steps:
@@ -92,7 +95,7 @@ env:
 
    
       - name: build
-       .run: |-
+        run: |-
          docker build \
           --tag "gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA" \
           --build-arg GITHUB_SHA="$GITHUB_SHA" \
