@@ -67,8 +67,7 @@ env:
      runs-on: ubuntu-latest
      environment: production
      steps:
-      -
-        name: Checkout
+      - name: Checkout
         uses: actions/checkout@v3
        
      
