@@ -54,7 +54,7 @@ jobs:
           image_name: ${{ env.IMAGE_NAME }}
           
           
-              Build and Deploy to GKE:
+      -  name: Build and Deploy to GKE:
 
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
