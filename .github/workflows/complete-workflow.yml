@@ -52,22 +52,20 @@ jobs:
           pcc_user: ${{ secrets.PCC_USER }}
           pcc_pass: ${{ secrets.PCC_PASS }}
           image_name: ${{ env.IMAGE_NAME }}
-          
-          
-     
-
-
-     
-
-  name: GKE
-  runs-on: ubuntu-latest
+        
+      -  name: Build and Deploy to GKE
+         runs-on: ubuntu-latest
+  
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
   GKE_CLUSTER: hello-cluster   # Add your cluster name here.
   GKE_ZONE: us-central1-c   # Add your cluster zone here.
   DEPLOYMENT_NAME: gke-test # Add your deployment name here.
-  IMAGE: static-site 
-  environment: production
+IMAGE: static-site 
+  setup-build-publish-deploy:
+      - name:  Build and Deploy to GKE
+         runs-on: ubuntu-latest
+         environment: production
    steps:
       - name: Checkout
         uses: actions/checkout@v3
