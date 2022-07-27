@@ -55,4 +55,5 @@ jobs:
           
           
           
-    - name: 
+      - name: Prisma Cloud image scan
+      
