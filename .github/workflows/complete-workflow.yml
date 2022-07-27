@@ -75,24 +75,28 @@ setup-build-publish-deploy:
         project_id: ${{ secrets.GKE_PROJECT }}
 
     # Configure Docker to use the gcloud command-line tool as a credential
-    # helper for authenticationrun: |-
-      - run: |-
+    # helper for authentication
+        run: |-
            gcloud --quiet auth configure-docker
 
     # Get the GKE credentials so we can deploy to the cluster
-      - uses: google-github-actions/get-gke-credentials@fb08709ba27618c31c09e014e1d8364b02e5042e
-        with:
-        cluster_name: ${{ env.GKE_CLUSTER }}
-        location: ${{ env.GKE_ZONE }}
-        credentials: ${{ secrets.GKE_SA_KEY }}
+        uses: google-github-actions/get-gke-credentials@fb08709ba27618c31c09e014e1d8364b02e5042e
+with:
+              cluster_name: ${{ env.GKE_CLUSTER }}
+              location: ${{ env.GKE_ZONE }}
+              credentials: ${{ secrets.GKE_SA_KEY }}
+          
+     
+              
 
-   
-      - name: build
-        run: |-
-         docker build \
+     -   name: Build and push
+        uses: docker/build-push-action@v3
           --tag "gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA" \
           --build-arg GITHUB_SHA="$GITHUB_SHA" \
-          --build-arg GITHUB_REF="$GITHUB_REF" \
+          --build-arg GITHUB_REF="$GITHUB_REF" \        
+
+   
+
      
     # Push the Docker image to Google Container Registry
       - name: publish
