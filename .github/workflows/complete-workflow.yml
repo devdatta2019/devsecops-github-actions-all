@@ -63,7 +63,7 @@ env:
   DEPLOYMENT_NAME: gke-test # Add your deployment name here.
   IMAGE: static-site
 
-  Deploy:
+  steps:
      runs-on: ubuntu-latest
      environment: production
      steps:
