@@ -55,11 +55,6 @@ jobs:
 
   name: Build and Deploy to GKE
 
-on:
-  push:
-    branches:
-      - main
-
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
   GKE_CLUSTER: hello-cluster    # Add your cluster name here.
@@ -67,11 +62,10 @@ env:
   DEPLOYMENT_NAME: gke-test # Add your deployment name here.
   IMAGE: static-site
 
-jobs:
-  setup-build-publish-deploy:
-    name: Setup, Build, Publish, and Deploy
-    runs-on: ubuntu-latest
-    environment: production
+
+   - name:Setup, Build, Publish, and Deploy
+           runs-on:ubuntu-latest
+           environment:production
 
     steps:
     - name: Checkout
