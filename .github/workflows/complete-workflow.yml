@@ -63,7 +63,6 @@ env:
   DEPLOYMENT_NAME: gke-test # Add your deployment name here.
   IMAGE: static-site
      
-     
      jobs:
      setup-build-publish-deploy
      name: Setup, Build, Publish, and Deploy
