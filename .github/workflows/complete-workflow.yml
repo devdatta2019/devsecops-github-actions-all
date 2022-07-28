@@ -53,10 +53,10 @@ jobs:
           pcc_pass: ${{ secrets.PCC_PASS }}
           image_name: ${{ env.IMAGE_NAME }}
           
-build-and-deploy:
+  deploy:
     name: build & deploy
     runs-on: ubuntu latest
-    env:
+     env:
     PROJECT_ID: ${{ secrets.GKE_PROJECT }}
     GKE_CLUSTER: cluster-1    # Add your cluster name here.
     GKE_ZONE: us-central1-c   # Add your cluster zone here.
