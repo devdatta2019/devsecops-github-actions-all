@@ -83,7 +83,7 @@ jobs:
                      
        - name: build
          run: |-
-             docker build \
+             docker build -t Dockerfile
                    
        
        - name: publish
