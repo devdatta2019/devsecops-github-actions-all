@@ -80,12 +80,10 @@ jobs:
            cluster_name: ${{ env.GKE_CLUSTER }}
            location: ${{ env.GKE_ZONE }}
            credentials: ${{ secrets.GKE_SA_KEY }}
-           image: ${{ env.GITHUB_SHA }}
-           GITHUB_REF: ${{ env.GITHUB_REF }}
                      
        - name: build
          run: |-
-             docker build \
+             docker build -t $IMAGE_NAME .
              --tag "gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA" \
              --build-arg GITHUB_SHA="$GITHUB_SHA" \
               --build-arg GITHUB_REF="$GITHUB_REF" \
