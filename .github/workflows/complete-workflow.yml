@@ -56,7 +56,7 @@ jobs:
 
   GKE:  
     name: Build and Deploy to GKE
-    runs-on: ubuntu-22.04
+    runs-on: macos-latest
     env:
         PROJECT_ID: ${{ secrets.GKE_PROJECT }}
         GKE_CLUSTER: hello-cluster    # Add your cluster name here.
