@@ -82,7 +82,7 @@ jobs:
                      
        - name: build 
          run: |- 
-             docker build .
+             docker build -t gcr.io/${{ secrets.PROJECT_ID }}/IMAGE_NAME:latest 
               
                    
        
