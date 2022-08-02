@@ -82,7 +82,7 @@ jobs:
                      
        - name: build 
          run: |- 
-             docker build -t gcr.io/${{ secrets.PROJECT_ID }}/image_name:latest .
+             docker build  .
                    
        
        - name: publish
