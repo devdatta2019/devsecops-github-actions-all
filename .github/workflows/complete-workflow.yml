@@ -62,7 +62,7 @@ jobs:
         GKE_CLUSTER: hello-cluster    # Add your cluster name here.
         GKE_ZONE: us-central1-c   # Add your cluster zone here.
         DEPLOYMENT_NAME: gke-test # Add your deployment name here.
-        IMAGE_NAME: ${{ github.repository }}:${{ github.sha }}
+        IMAGE_NAME: test
 
     steps: 
        - name: checkout
@@ -89,7 +89,7 @@ jobs:
        - name: publish
          
          run: |-
-           docker push gcr.io/${{ secrets.gcp_project_id }}/image_name:latest 
+             docker push gcr.io/$PROJECT_ID/$IMAGE_NAME:$GITHUB_SHA
        
        - name:  Set up Kustomize
          run: |-
