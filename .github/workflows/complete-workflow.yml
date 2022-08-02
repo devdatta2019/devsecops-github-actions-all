@@ -89,7 +89,7 @@ jobs:
        - name: publish
          
          run: |-
-             docker push gcr.io/$PROJECT_ID/$image_name:$GITHUB_SHA
+             docker push gcr.io/$project_id/$image_name:$github_sha
        
        - name:  Set up Kustomize
          run: |-
