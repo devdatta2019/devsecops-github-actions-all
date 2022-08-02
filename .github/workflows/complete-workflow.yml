@@ -51,7 +51,7 @@ jobs:
           pcc_console_url: ${{ secrets.PCC_CONSOLE_URL }}
           pcc_user: ${{ secrets.PCC_USER }}
           pcc_pass: ${{ secrets.PCC_PASS }}
-          image_name: ${{ env.IMAGE_NAME }}
+          IMAGE_NAME: ${{ env.IMAGE_NAME }}
           
 
   GKE:  
