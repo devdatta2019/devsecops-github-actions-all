@@ -82,10 +82,7 @@ jobs:
                      
        - name: build 
          run: |- 
-             docker --tag "gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA" \
-             docker --build-arg GITHUB_SHA="$GITHUB_SHA" \
-             docker --build-arg GITHUB_REF="$GITHUB_REF" \
-             
+             docker build -t gcr.io/${{ secrets.PROJECT_ID }}/image_name:latest .
                    
        
        - name: publish
