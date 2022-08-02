@@ -82,7 +82,7 @@ jobs:
                      
        - name: build 
          run: |- 
-             docker build  .
+             docker build -t IMAGE_NAME:latest . 
                    
        
        - name: publish
