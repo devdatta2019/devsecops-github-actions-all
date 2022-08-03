@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: gke-test
-        image: gcr.io/$PROJECT_ID/$IMAGE_NAME:latest
+        image: gcr.io/$project_id/$image_name:latest
         ports:
         - containerPort: 5000
         resources:
