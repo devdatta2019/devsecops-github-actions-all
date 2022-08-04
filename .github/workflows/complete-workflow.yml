@@ -61,7 +61,6 @@ jobs:
         PROJECT_ID: ${{ secrets.GKE_PROJECT }}
         GKE_CLUSTER: hello-cluster    # Add your cluster name here.
         GKE_ZONE: us-central1-c   # Add your cluster zone here.
-        DEPLOYMENT_NAME: gke-test # Add your deployment name here.
         IMAGE_NAME: test
 
     steps: 
@@ -94,6 +93,5 @@ jobs:
          
        - name: Deploy
          run: |-
-          kubectl apply -f deployment.yml
-          kubectl rollout status deployment/$DEPLOYMENT_NAME
+          kubectl apply -f pod.yml
           kubectl get services -o wide
