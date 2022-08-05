@@ -20,8 +20,6 @@ spec:
       containers:
       - name: gke-test
         image: gcr.io/apt-reality-357605/test:latest
-      
-        
         ports:
         - containerPort: 5000
         resources:
