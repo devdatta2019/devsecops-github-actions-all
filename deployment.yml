@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: gke-test
-        image: gcr.io/apt-reality-357605/test@sha256:42c5d061a382772153767055f9cac4e3a03eef5d0d1f8f5b58f7470fa6e7bf36
+        image: gcr.io/apt-reality-357605/test@sha256:7ff4c4ae8d15c0f83685833f680ecdfc7a030a728126a847bd507bd4558f77cf
         ports:
         - containerPort: 5000
         resources:
