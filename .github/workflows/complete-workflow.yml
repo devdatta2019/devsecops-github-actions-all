@@ -97,8 +97,7 @@ jobs:
          
        - name: Deploy
          run: |-
-          ./kustomize edit set image gcr.io/apt-reality-357605/test@sha256:3155e4bee402435bdc08fdb6973056500350608eb04ddd752c52cc51b26a9306
-        
+          ./kustomize edit set image gcr.io/PROJECT_ID/IMAGE_NAME:latest=gcr.io/$PROJECT_ID/$IMAGE_NAME:latest
           ./kustomize build . | kubectl apply -f -
            kubectl rollout status deployment/$DEPLOYMENT_NAME
            kubectl get services -o wide
