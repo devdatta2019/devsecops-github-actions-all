@@ -18,8 +18,4 @@ spec:
         image: gcr.io/apt-reality-357605/test@sha256:8858c88a45b4ecb108a47d88d7c93a2bdfa2a2f3c038d7a1bc8c4e8beaa86e10
         ports:
         - containerPort: 5000
-        resources:
-          requests:
-            cpu: 100m
-          limits:
-            cpu: 100m
+        
