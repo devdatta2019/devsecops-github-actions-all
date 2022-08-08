@@ -18,7 +18,7 @@ spec:
         app: hello-app
     spec:
       containers:
-      - name: gke-test
+      - name: hello-app
         image: gcr.io/apt-reality-357605/test
         ports:
         - containerPort: 8080
