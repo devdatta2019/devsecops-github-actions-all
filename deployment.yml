@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: gke-test
-        image: nginx
+        image: gcr.io/apt-reality-357605/test@sha256:7ff4c4ae8d15c0f83685833f680ecdfc7a030a728126a847bd507bd4558f77cf
         ports:
         - containerPort: 5000
         resources:
