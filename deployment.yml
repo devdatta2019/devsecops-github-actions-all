@@ -20,8 +20,4 @@ spec:
         ports:
         - containerPort: 5000
         starupProbe: 
-          initialDelaySeconds: 1
-          periodSeconds: 3
-          timeoutSeconds: 1
-          successThreshold: 1
-          failureThreshold: 1
+         
