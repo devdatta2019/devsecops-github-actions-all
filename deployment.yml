@@ -14,14 +14,11 @@ spec:
     spec:
       restartPolicy: Always
       containers:
-      readinessProbe:
-        initialDelaySeconds: 1
-            periodSeconds: 2
-            timeoutSeconds: 1
-            successThreshold: 1
-            failureThreshold: 1
       - name: gke-test
         image: gcr.io/apt-reality-357605/test@sha256:8858c88a45b4ecb108a47d88d7c93a2bdfa2a2f3c038d7a1bc8c4e8beaa86e10
+        livenessProbe: 
+           initialDelaySeconds: 5
+            periodSeconds: 5
         ports:
         - containerPort: 5000
         
