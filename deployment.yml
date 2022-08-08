@@ -1,29 +1,20 @@
-apiVersion: v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: gke-test
 spec:
-  replicas: 2
+  replicas: 4
   selector:
     matchLabels:
-      app: hello-app
-  strategy:
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 1
-  minReadySeconds: 5
+      app: gke-test
   template:
     metadata:
       labels:
-        app: hello-app
+        app: gke-test
     spec:
+      restartPolicy: Always
       containers:
       - name: gke-test
-        image: gcr.io/apt-reality-357605/test:latest
+        image: gcr.io/apt-reality-357605/test@sha256:8858c88a45b4ecb108a47d88d7c93a2bdfa2a2f3c038d7a1bc8c4e8beaa86e10
         ports:
-        - containerPort: 8080
-        resources:
-          requests:
-            cpu: 100m 
-          limits:
-            cpu: 100m
+        - containerPort: 5000
