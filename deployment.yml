@@ -15,7 +15,7 @@ spec:
       restartPolicy: Always
       containers:
       readinessProbe:
-          	initialDelaySeconds: 1
+        initialDelaySeconds: 1
             periodSeconds: 2
             timeoutSeconds: 1
             successThreshold: 1
