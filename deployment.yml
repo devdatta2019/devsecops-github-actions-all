@@ -19,8 +19,6 @@ spec:
         ports:
         - containerPort: 5000
         readinessProbe:
-              initialDelaySeconds: 1
         periodSeconds: 5
-        timeoutSeconds: 1
-        successThreshold: 1
-        failureThreshold: 1
+          
+        
